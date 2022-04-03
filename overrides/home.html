@@ -1,0 +1,218 @@
+{% extends "main.html" %}
+
+<!-- Render hero under tabs -->
+{% block tabs %} {{ super() }}
+
+<!-- Additional styles for landing page -->
+<style>
+  /* Application header should be static for the landing page */
+  .md-header {
+    position: initial;
+  }
+
+  /* Remove spacing, as we cannot hide it completely */
+  .md-main__inner {
+    margin: 0;
+  }
+
+  /* Hide main content for now */
+  .md-content {
+    display: none;
+  }
+
+  /* Hide table of contents */
+  @media screen and (min-width: 60em) {
+    .md-sidebar--secondary {
+      display: none;
+    }
+  }
+
+  /* Hide navigation */
+  @media screen and (min-width: 76.25em) {
+    .md-sidebar--primary {
+      display: none;
+    }
+  }
+
+  .md-grid {
+    max-width: px2rem(1220px);
+    margin-inline: auto;
+  }
+
+  .md-container {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+
+    @media print {
+      display: block;
+    }
+  }
+
+  .home-container {
+    display: flex;
+    padding-top: 20px;
+  }
+  .home-content {
+    flex: 1;
+    padding-top: 100px;
+  }
+  .home-image {
+    display: flex;
+    flex: 2;
+    align-items: flex-end !important;
+    justify-content: flex-end;
+  }
+  .content-title {
+    font-weight: bold !important;
+    margin-bottom: 30px !important;
+    color: white !important;
+  }
+  .content-subtitle {
+    color: white;
+  }
+  section {
+    background-color: white;
+    height: calc(100vh - 96px);
+    background-image: url("assets/bg-dark5.png") !important;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    overflow: hidden !important;
+  }
+
+  /* worked */
+
+  .md-button {
+    color: white !important;
+    border-color: white !important;
+  }
+
+  .md-button:hover {
+    background-color: #526cfe !important;
+    border-color: #526cfe !important;
+  }
+
+  .md-button--primary {
+    color: #0299de !important;
+    background-color: white !important;
+    border-color: white !important;
+  }
+
+  .md-button--primary:hover {
+    border-color: #526cfe !important;
+    color: white !important;
+  }
+  /* Mobile responsive */
+  @media screen and (max-width: 766px) {
+    .home-container {
+      display: flex;
+      flex-direction: column-reverse;
+    }
+
+    .home-content {
+      flex: 1;
+      padding: 0px 20px 0px 20px;
+    }
+    .home-image {
+      flex: 1;
+      justify-content: center;
+    }
+
+    .home-image > img {
+      height: 300px;
+      width: auto;
+    }
+
+    .md-button {
+      padding: 8px 26px 8px 26px !important;
+    }
+
+    section {
+      background-image: url("assets/mobile-bg2.png") !important;
+      height: calc(100vh - 48px);
+    }
+  }
+  /* Desktop responsive */
+  @media screen and (min-width: 992px) {
+    .home-content {
+      padding-left: 20px;
+    }
+    /* section {
+      height: calc(100vh - 48px);
+    } */
+  }
+  /* Tablet responsive */
+  @media screen and (min-width: 768px) and (max-width: 992px) {
+    .home-container {
+      display: flex;
+      flex-direction: column-reverse;
+      padding-left: 20px;
+    }
+
+    .home-content {
+      flex: 1;
+      padding: 0px 20px 0px 20px;
+    }
+    .home-image {
+      flex: 1;
+
+      align-items: center;
+      justify-content: center;
+    }
+
+    section {
+      background-image: url("assets/home-tablet-bg.png") !important;
+      height: calc(100vh - 48px);
+    }
+  }
+</style>
+
+<!--Hero for landing page -->
+<section class="mdx-container">
+  <div class="md-grid md-typeset">
+    <div class="home-container">
+      <!-- Hero content -->
+      <div class="home-content">
+        <h1 class="content-title">Technical documentation that just works</h1>
+        <p class="content-subtitle">
+          Create a branded static site from a set of Markdown files to host the
+          documentation of your Open Source or commercial project. Set up in 5
+          minutes. Set up in 5 minutes.
+        </p>
+        <a
+          href="{{ page.next_page.url | url }}"
+          title="{{ page.next_page.title | e }}"
+          class="md-button md-button--primary"
+        >
+          Getting Started
+        </a>
+        <a
+          href="{{ 'Whitepaper/whitepaper/' | url }}"
+          title="Material for MkDocs Insiders"
+          class="md-button"
+        >
+          Whitepaper
+        </a>
+      </div>
+
+      <!-- Hero image -->
+      <div class="home-image">
+        <img
+          src="assets/selendra.png"
+          alt=""
+          width="650"
+          height="650"
+          draggable="false"
+        />
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}
+
+<!-- Content -->
+{% block content %}{% endblock %}
+
+<!-- Application footer -->
+{% block footer %}{% endblock %}

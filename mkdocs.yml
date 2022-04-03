@@ -1,0 +1,67 @@
+site_name: Selendra Docs
+site_description: The Selendra knowledge base
+site_author: "Selendra"
+site_url: https://docs.selendra.org
+
+# Navigation
+nav:
+  - Home: index.md
+  - Basic:
+      - Getting Started: basic/getting-started.md
+      - Create an Account: basic/create-account.md
+      - Send SEL: basic/send-sel.md
+  - Maintain:
+      - Setting Up Local Node: Maintain/guides-how-to-setup-indracore-local-node.md
+      - Set Up a validator: Maintain/guides-how-to-validate-selendra.md
+      - Nominator Guide: Maintain/guides-how-to-nominate-selendra.md
+  - Integrations:
+      - Indra-JS: Integrations/polkadotjs.md
+      - Polkadot.js: Integrations/polkadotjs.md
+  - Smart Contracts:
+      - Setup Environment: SmartContracts/guides-how-to-setup-environment.md
+      - Creating an ink! Project: SmartContracts/guides-creating-ink-project.md
+      - Building Your Contract: SmartContracts/guides-building-your-contract.md
+      - Deploy a WASM Contract: SmartContracts/guides-how-to-deploy-a-wasm-contract.md
+      - Calling Your Contract: SmartContracts/guides-how-to-call-your-contract.md
+  - White Paper:
+      - White Paper: Whitepaper/whitepaper.md
+  - Team: Team/team.md
+  - FAQs: Faqs/faqs.md
+
+# Configuration for the Material theme
+theme:
+  custom_dir: overrides
+  features:
+    - navigation.tabs
+  name: material
+  favicon: images/sel.png
+  logo: assets/selendra-logo-white.png
+  icon:
+    repo: fontawesome/brands/github-square
+  palette:
+    - scheme: slate
+      primary: md-primary
+  font:
+    text: "PT Sans"
+    code: "Ubuntu Mono"
+  feature:
+    tabs: false
+
+extra:
+  social:
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/selendraio
+    - icon: fontawesome/brands/telegram
+      link: https://t.me/selendra_sel
+    - icon: fontawesome/brands/github
+      link: https://github.com/selendra
+    - icon: fontawesome/brands/medium
+      link: https://medium.com/selendra
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/company/selendra
+repo_url: https://github.com/selendra/selendra-docs
+repo_name: selendra/selendra-docs
+edit_uri: ""
+
+extra_css:
+  - stylesheets/extra.css
